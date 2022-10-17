@@ -15,15 +15,14 @@ git checkout patch/canto
 ```
 
 Create folder for snapshots  
-`mkdir -p $HOME/snapshots/canto`
+`mkdir -p ./snapshots/canto`
 
 Start Nginx via docker  
 ```bash
-cd $HOME; \
-sudo docker run --name snapshots \
+sudo docker run --name canto-snapshots \
 --restart always \
 -v $(pwd)/default.conf:/etc/nginx/conf.d/default.conf \
--v $(pwd)/snapshots/:/root/ \
+-v $(pwd)/snapshots/canto:/root/ \
 -p 80:80 \
 -d nginx
 ```
