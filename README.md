@@ -22,7 +22,7 @@ Start Nginx via docker
 sudo docker run --name canto-snapshots \
 --restart always \
 -v $(pwd)/default.conf:/etc/nginx/conf.d/default.conf \
--v $(pwd)/snapshots/canto:/root/ \
+-v $HOME/snapshots/canto:/root/ \
 -p 80:80 \
 -d nginx
 ```
