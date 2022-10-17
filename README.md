@@ -15,7 +15,7 @@ git checkout patch/canto
 ```
 
 Create folder for snapshots  
-`mkdir -p ./snapshots/canto`
+`mkdir -p $HOME/snapshots/canto`
 
 Start Nginx via docker  
 ```bash
