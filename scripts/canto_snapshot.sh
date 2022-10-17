@@ -32,7 +32,7 @@ log_this "Creating new snapshot"
 time tar cf ${HOME}/${SNAP_NAME} -C ${DATA_PATH} . &>>${LOG_PATH}
 
 log_this "Starting ${SERVICE_NAME}"
-systemctl start ${SERVICE_NAME}; echo $? >> ${LOG_PATH}
+sudo systemctl start cantod; echo $? >> ${LOG_PATH}
 
 log_this "Removing old snapshot(s):"
 cd ${SNAP_PATH}

@@ -11,12 +11,12 @@ Clone github repo
 `git clone https://github.com/SiddarthVijay/cosmos-snapshots.git && cd cosmos-snapshots`  
 
 Create folder for snapshots  
-`mkdir $HOME/snapshots/`
+`mkdir -p $HOME/snapshots/canto`
 
 Start Nginx via docker  
 ```bash
 cd $HOME; \
-docker run --name snapshots \
+sudo docker run --name snapshots \
 --restart always \
 -v $(pwd)/default.conf:/etc/nginx/conf.d/default.conf \
 -v $(pwd)/snapshots/:/root/ \
