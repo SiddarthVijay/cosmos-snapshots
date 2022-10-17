@@ -25,7 +25,6 @@ LAST_BLOCK_HEIGHT=$(curl -s ${RPC_ADDRESS}/status | jq -r .result.sync_info.late
 log_this "LAST_BLOCK_HEIGHT ${LAST_BLOCK_HEIGHT}"
 
 log_this "Stopping ${SERVICE_NAME}"
-# systemctl stop ${SERVICE_NAME}; echo $? >> ${LOG_PATH}
 sudo systemctl stop cantod; echo $? >> {LOG_PATH}
 
 log_this "Creating new snapshot"
@@ -45,4 +44,3 @@ mv ${HOME}/${CHAIN_ID}*tar ${SNAP_PATH} &>>${LOG_PATH}
 du -hs ${SNAP_PATH} | tee -a ${LOG_PATH}
 
 log_this "Done\n---------------------------\n"
-
